@@ -236,6 +236,22 @@ export default function Contact() {
     </svg>
   );
 
+  const PhoneIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  );
+
+  const getIcon = (iconName) => {
+    switch (iconName) {
+      case "email": return <EmailIcon />;
+      case "location": return <LocationIcon />;
+      case "availability": return <AvailabilityIcon />;
+      case "phone": return <PhoneIcon />;
+      default: return null;
+    }
+  };
+
   const SendIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="22" y1="2" x2="11" y2="13"/>
@@ -265,6 +281,9 @@ export default function Contact() {
             <span className="highlight">{contact.titleHighlight}</span>
           </h2>
           <p className="section-subtitle">{contact.description}</p>
+          <div className="response-time-wrapper">
+            <span className="response-time-badge">⚡ Typical response time: under 24 hours</span>
+          </div>
         </motion.div>
 
         <div className="contact-grid">
@@ -275,27 +294,15 @@ export default function Contact() {
             viewport={{ once: true }}
             className="contact-info"
           >
-            <div className="info-item">
-              <span className="info-icon"><EmailIcon /></span>
-              <div>
-                <h4>Email</h4>
-                <p>uzaaiaamirr@gmail.com</p>
+            {contact.info.map((item, index) => (
+              <div className="info-item" key={index}>
+                <span className="info-icon">{getIcon(item.icon)}</span>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.value}</p>
+                </div>
               </div>
-            </div>
-            <div className="info-item">
-              <span className="info-icon"><LocationIcon /></span>
-              <div>
-                <h4>Location</h4>
-                <p>Remote / Worldwide</p>
-              </div>
-            </div>
-            <div className="info-item">
-              <span className="info-icon"><AvailabilityIcon /></span>
-              <div>
-                <h4>Availability</h4>
-                <p>Open to work</p>
-              </div>
-            </div>
+            ))}
 
             <div className="social-links">
               <h4>Connect with me</h4>

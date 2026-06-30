@@ -73,35 +73,10 @@ export default function Skills() {
                 />
                 <div className="skill-card-info">
                   <h3 className="skill-card-name">{skill.name}</h3>
-                  <span className="skill-card-level">{skill.level}%</span>
                 </div>
-              </div>
-              <div className="skill-bar-container">
-                <motion.div
-                  className="skill-bar-progress"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  viewport={{ once: true }}
-                />
               </div>
               <p className="skill-card-description">{skill.description}</p>
             </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="skills-summary"
-        >
-          {skills.summary.map((item, index) => (
-            <div key={index} className="summary-item">
-              <span className="summary-number">{item.number}</span>
-              <span className="summary-label">{item.label}</span>
-            </div>
           ))}
         </motion.div>
       </div>

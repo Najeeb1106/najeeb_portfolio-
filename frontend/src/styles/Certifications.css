@@ -1,0 +1,133 @@
+.certifications {
+  padding: 100px 24px;
+  position: relative;
+}
+
+.certs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certs-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.cert-card {
+  position: relative;
+  padding: 28px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cert-card:hover {
+  border-color: rgba(18, 185, 144, 0.25);
+  background: rgba(18, 185, 144, 0.03);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cert-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at 50% 50%, rgba(18, 185, 144, 0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.cert-card:hover .cert-glow {
+  opacity: 1;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cert-logo-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.cert-card:hover .cert-logo-wrapper {
+  background: rgba(18, 185, 144, 0.08);
+}
+
+.cert-logo {
+  object-fit: contain;
+}
+
+.cert-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.cert-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  min-height: 48px;
+}
+
+.cert-issuer {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.cert-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    padding: 80px 16px;
+  }
+  .certs-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

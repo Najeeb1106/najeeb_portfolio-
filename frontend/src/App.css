@@ -39,8 +39,8 @@ body {
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(186, 128, 255, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(186, 128, 255, 0.3) 1px, transparent 1px);
+    linear-gradient(rgba(18, 185, 144, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 185, 144, 0.3) 1px, transparent 1px);
   background-size: 60px 30px;
   animation: gridPulse 4s ease-in-out infinite;
 }
@@ -50,8 +50,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(186, 128, 255, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(186, 128, 255, 0.2) 1px, transparent 1px);
+    linear-gradient(rgba(18, 185, 144, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 185, 144, 0.2) 1px, transparent 1px);
   background-size: 60px 30px;
   background-position: 30px 15px;
   pointer-events: none;
@@ -63,8 +63,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(45deg, rgba(186, 128, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(186, 128, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(45deg, rgba(18, 185, 144, 0.1) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(18, 185, 144, 0.1) 1px, transparent 1px);
   background-size: 30px 30px;
   pointer-events: none;
   animation: gridPulse 6s ease-in-out infinite 1s;
@@ -130,7 +130,7 @@ body {
 .orb-global-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #9d6bff, transparent 70%);
+  background: radial-gradient(circle, #0ea883, transparent 70%);
   bottom: -100px;
   left: -100px;
   animation: floatOrbGlobal 10s ease-in-out infinite reverse;
@@ -139,7 +139,7 @@ body {
 .orb-global-3 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, #6c3cb0, transparent 70%);
+  background: radial-gradient(circle, #0a7057, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -212,7 +212,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9d6bff;
+  background: #0ea883;
 }
 
 ::selection {

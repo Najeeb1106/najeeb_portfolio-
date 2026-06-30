@@ -87,12 +87,34 @@ export default function Projects() {
                     <span key={i} className="project-tag">{tag}</span>
                   ))}
                 </div>
-                <button 
-                  onClick={() => openModal(project)} 
-                  className="project-link"
-                >
-                  View Project →
-                </button>
+                <div className="project-actions">
+                  <button 
+                    onClick={() => openModal(project)} 
+                    className="project-action-btn details"
+                  >
+                    Details
+                  </button>
+                  {project.liveUrl && (
+                    <a 
+                      href={project.liveUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="project-action-btn live"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="project-action-btn github"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

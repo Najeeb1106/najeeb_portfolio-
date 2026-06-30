@@ -1,0 +1,150 @@
+.references-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.references-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.references-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.references-tag {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(18, 185, 144, 0.08);
+  border: 1px solid rgba(18, 185, 144, 0.15);
+  border-radius: 100px;
+  box-shadow: 0 0 15px rgba(18, 185, 144, 0.05);
+}
+
+.references-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.references-title .highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, #0ea883 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.references-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+  .references-title {
+    font-size: 34px;
+  }
+}
+
+.reference-card {
+  position: relative;
+  background: rgba(20, 20, 35, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.reference-card:hover {
+  border-color: rgba(18, 185, 144, 0.25);
+  box-shadow: 0 10px 30px rgba(18, 185, 144, 0.06);
+}
+
+.quote-mark {
+  position: absolute;
+  top: 10px;
+  right: 24px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  color: rgba(18, 185, 144, 0.07);
+  line-height: 1;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.ref-relationship {
+  margin-bottom: 24px;
+}
+
+.relationship-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(18, 185, 144, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(18, 185, 144, 0.12);
+}
+
+.ref-meta {
+  margin-bottom: 24px;
+}
+
+.ref-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.ref-role {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+}
+
+.ref-contact {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+}
+
+.ref-email-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ref-email-link:hover {
+  color: var(--accent);
+}

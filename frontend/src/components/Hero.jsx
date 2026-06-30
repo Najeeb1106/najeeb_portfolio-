@@ -1,133 +1,58 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Float,
-  Environment,
-  Sphere,
-  MeshDistortMaterial,
-} from "@react-three/drei";
-import { Suspense, useRef, useState, useEffect } from "react";
-import PortfolioContent from "../data/PortfolioContent";
 import "../styles/Hero.css";
-import cvPDF from "../assets/CV/my_cv.pdf";
+import ProfileImg from "../assets/images/profile.png";
 
-function Avatar3D() {
-  const meshRef = useRef();
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <group
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-      >
-        <Sphere
-          ref={meshRef}
-          args={[1, 64, 64]}
-          position={[0, 0, 0]}
-          scale={hovered ? 1.1 : 1}
-        >
-          <MeshDistortMaterial
-            color="#ba80ff"
-            roughness={0.2}
-            metalness={0.8}
-            distort={hovered ? 0.4 : 0.2}
-            speed={hovered ? 2 : 1}
-            envMapIntensity={1.5}
-          />
-        </Sphere>
-
-        <mesh position={[-0.4, 0.2, 0.9]}>
-          <sphereGeometry args={[0.12, 16, 16]} />
-          <meshStandardMaterial color="white" roughness={0.1} metalness={0.1} />
-        </mesh>
-        <mesh position={[0.4, 0.2, 0.9]}>
-          <sphereGeometry args={[0.12, 16, 16]} />
-          <meshStandardMaterial color="white" roughness={0.1} metalness={0.1} />
-        </mesh>
-
-        <mesh position={[-0.4, 0.2, 1.02]}>
-          <sphereGeometry args={[0.06, 16, 16]} />
-          <meshStandardMaterial color="#1d1d1f" roughness={0} metalness={0} />
-        </mesh>
-        <mesh position={[0.4, 0.2, 1.02]}>
-          <sphereGeometry args={[0.06, 16, 16]} />
-          <meshStandardMaterial color="#1d1d1f" roughness={0} metalness={0} />
-        </mesh>
-
-        <mesh position={[0, -0.8, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[1.2, 1.4, 64]} />
-          <meshStandardMaterial
-            color="#ba80ff"
-            transparent
-            opacity={0.3}
-            side={2}
-            emissive="#ba80ff"
-            emissiveIntensity={0.5}
-          />
-        </mesh>
-
-        {[...Array(20)].map((_, i) => (
-          <mesh
-            key={i}
-            position={[
-              Math.sin(i * 0.5) * 1.6,
-              Math.cos(i * 0.7) * 1.6,
-              Math.sin(i * 0.3) * 1.6,
-            ]}
-            scale={0.03}
-          >
-            <sphereGeometry args={[1, 8, 8]} />
-            <meshStandardMaterial
-              color="#ba80ff"
-              emissive="#ba80ff"
-              emissiveIntensity={0.5}
-              transparent
-              opacity={0.6}
-            />
-          </mesh>
-        ))}
-      </group>
-    </Float>
-  );
-}
+const roles = ["Full Stack Engineer", "Flutter Expert", "Machine Learning Engineer"];
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false);
-  const { hero } = PortfolioContent;
-  const [isDownloading, setIsDownloading] = useState(false);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    let timer;
+    const handleType = () => {
+      const fullText = roles[currentRoleIndex];
+      if (!isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(100);
+
+        if (currentText === fullText) {
+          timer = setTimeout(() => setIsDeleting(true), 1500);
+          return;
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        setTypingSpeed(50);
+
+        if (currentText === "") {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+          timer = setTimeout(() => {}, 500);
+          return;
+        }
+      }
+
+      timer = setTimeout(handleType, typingSpeed);
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
-  const handleDownloadCV = () => {
-    setIsDownloading(true);
+    timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex, typingSpeed]);
 
-    setTimeout(() => {
-      const link = document.createElement("a");
-      link.href = cvPDF;
-      link.download = "Uzair_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setIsDownloading(false);
-    }, 800);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -143,7 +68,7 @@ export default function Hero() {
               className="hero-badge"
             >
               <span className="badge-dot" />
-              <span className="badge-text">{hero.badge}</span>
+              <span className="badge-text">Available for opportunities</span>
               <span className="badge-glow" />
             </motion.div>
 
@@ -153,9 +78,26 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="hero-title"
             >
-              {hero.greeting} <span className="highlight">{hero.name}</span>
+              Najeeb <br />
+              <span className="highlight">Ullah Tahir</span>
               <span className="title-cursor">|</span>
             </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="hero-divider-container"
+            >
+              <span className="divider-line" />
+              <span className="divider-line" />
+              <span className="divider-text">
+                {currentText}
+                <span className="divider-cursor">|</span>
+              </span>
+              <span className="divider-line" />
+              <span className="divider-line" />
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -163,112 +105,75 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hero-subtitle"
             >
-              I'm a {hero.title} who {hero.description}
+              2+ years crafting scalable web applications, mobile solutions & AI integrations. Expert in React, Node.js & Flutter with deep full-stack specialization.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="hero-contact-info"
+            >
+              <div className="contact-info-item">
+                <svg className="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Sargodha, Pakistan</span>
+              </div>
+              <div className="contact-info-item">
+                <svg className="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>najeebullahtahir786@gmail.com</span>
+              </div>
+              <div className="contact-info-item">
+                <svg className="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 21l1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
+                </svg>
+                <span>+92 339 0460008</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hero-actions"
+              className="hero-actions-new"
             >
               <button
-                className="btn-primary"
-                onClick={handleDownloadCV}
-                disabled={isDownloading}
+                className="btn-primary-new"
+                onClick={scrollToContact}
               >
-                <span className="btn-content">
-                  {isDownloading ? (
-                    <>
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className="spinner"
-                      >
-                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                      </svg>
-                      Downloading...
-                    </>
-                  ) : (
-                    <>
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                      </svg>
-                      {hero.buttons.primary}
-                    </>
-                  )}
-                </span>
-                <span className="btn-glow-effect" />
+                Hire Me
               </button>
-              <button className="btn-secondary" onClick={scrollToProjects}>
-                {hero.buttons.secondary}
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
+              <a
+                href="https://linkedin.com/in/najeeb-ullah-tahir"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-new"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
                 </svg>
-              </button>
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/Najeeb1106"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-new"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="hero-stats"
-          >
-            {hero.stats.map((stat, index) => (
-              <div key={index} className="stat-item">
-                <div className="stat-glow" />
-                <span className="stat-number">{stat.number}</span>
-                <span className="stat-label">{stat.label}</span>
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="tech-stack"
-          >
-            <p className="tech-label">
-              <span className="tech-dot" />
-              Tech Stack
-            </p>
-            <div className="tech-grid">
-              {hero.technologies.map((tech, index) => (
-                <motion.span
-                  key={index}
-                  className="tech-tag"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {tech}
-                  <span className="tech-glow" />
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
         <motion.div
@@ -277,53 +182,30 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="hero-right"
         >
-          <div className="avatar-container">
-            {!isMobile ? (
-              <Canvas
-                camera={{ position: [0, 0, 4], fov: 45 }}
-                gl={{
-                  antialias: true,
-                  powerPreference: "high-performance",
-                }}
-              >
-                <Suspense fallback={null}>
-                  <Environment preset="city" />
-                  <ambientLight intensity={0.5} />
-                  <directionalLight position={[5, 5, 5]} intensity={1} />
-                  <directionalLight
-                    position={[-5, -5, 5]}
-                    intensity={0.5}
-                    color="#ba80ff"
-                  />
-                  <OrbitControls
-                    enableZoom={false}
-                    enablePan={false}
-                    autoRotate
-                    autoRotateSpeed={2}
-                    maxPolarAngle={Math.PI / 2}
-                    minPolarAngle={Math.PI / 2}
-                  />
-                  <Avatar3D />
-                </Suspense>
-              </Canvas>
-            ) : (
-              <div className="avatar-placeholder">
-                <div className="placeholder-icon">👨‍💻</div>
-              </div>
-            )}
-
-            <div className="ring-dots" />
-            <div className="ring-dots-outer" />
-
-            <div className="particle-ring">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className="dot" />
-              ))}
+          <div className="profile-image-showcase-new">
+            <div className="profile-image-wrapper-new">
+              <img 
+                src={ProfileImg} 
+                alt="Najeeb Ullah Tahir" 
+                className="profile-img-element-new"
+                loading="eager"
+              />
             </div>
-
-            <div className="avatar-glow" />
+            <div className="profile-glow-new" />
+            <div className="profile-orbit-new" />
           </div>
         </motion.div>
+      </div>
+
+      <div className="scroll-down-container" onClick={scrollToAbout}>
+        <span className="scroll-text">SCROLL</span>
+        <motion.span 
+          className="scroll-arrow"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+        >
+          ↓
+        </motion.span>
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© {currentYear} {footer.brand.replace('.', '')}. {footer.copyright}</span>
+          <span>© {currentYear} Najeeb Ullah Tahir. All rights reserved.</span>
           <span className="footer-heart">{footer.heart}</span>
         </div>
       </div>

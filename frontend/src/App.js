@@ -2,10 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Services from "./components/Services";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
@@ -59,9 +63,9 @@ function App() {
         className="global-spotlight"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            rgba(186, 128, 255, 0.25) 0%, 
-            rgba(186, 128, 255, 0.12) 15%, 
-            rgba(186, 128, 255, 0.04) 30%, 
+            rgba(18, 185, 144, 0.25) 0%, 
+            rgba(18, 185, 144, 0.12) 15%, 
+            rgba(18, 185, 144, 0.04) 30%, 
             transparent 55%)`,
           opacity: isHovering ? 1 : 0,
           transition: "opacity 0.4s ease",
@@ -72,8 +76,8 @@ function App() {
         className="global-spotlight-secondary"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-            rgba(186, 128, 255, 0.12) 0%, 
-            rgba(186, 128, 255, 0.04) 25%, 
+            rgba(18, 185, 144, 0.12) 0%, 
+            rgba(18, 185, 144, 0.04) 25%, 
             transparent 50%)`,
           opacity: isHovering ? 1 : 0,
           transition: "opacity 0.4s ease",
@@ -87,10 +91,14 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Services />
+      <Experience />
       <Skills />
       <Projects />
+      <Certifications />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

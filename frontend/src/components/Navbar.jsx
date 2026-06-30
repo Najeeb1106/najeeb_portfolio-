@@ -7,6 +7,7 @@ export default function Navbar() {
   const { navbar } = PortfolioContent;
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,6 +23,19 @@ export default function Navbar() {
       element.scrollIntoView({ behavior: "smooth" });
       setOpen(false);
     }
+  };
+
+  const handleDownloadCV = () => {
+    setIsDownloading(true);
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = "/Najeeb_Ullah_Tahir_CV_v2.docx";
+      link.download = "Najeeb_Ullah_Tahir_CV_v2.docx";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setIsDownloading(false);
+    }, 800);
   };
 
   return (
@@ -53,17 +67,47 @@ export default function Navbar() {
             </motion.li>
           ))}
           <li className="mobile-cta">
-            <button className="btn-glow" onClick={() => scrollToSection("#contact")}>
-              <span className="btn-text">{navbar.cta}</span>
-              <span className="btn-shimmer" />
-            </button>
+            <div className="mobile-cta-group">
+              <button className="nav-btn-hire" onClick={() => scrollToSection("#contact")}>
+                Hire Me
+              </button>
+              <button className="nav-btn-cv" onClick={handleDownloadCV} disabled={isDownloading}>
+                {isDownloading ? (
+                  <span>Downloading...</span>
+                ) : (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }}>
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download CV
+                  </>
+                )}
+              </button>
+            </div>
           </li>
         </ul>
 
-        <button className="nav-cta" onClick={() => scrollToSection("#contact")}>
-          <span className="btn-text">{navbar.cta}</span>
-          <span className="btn-shimmer" />
-        </button>
+        <div className="nav-cta-group">
+          <button className="nav-btn-hire" onClick={() => scrollToSection("#contact")}>
+            Hire Me
+          </button>
+          <button className="nav-btn-cv" onClick={handleDownloadCV} disabled={isDownloading}>
+            {isDownloading ? (
+              <span>Downloading...</span>
+            ) : (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', verticalAlign: 'middle' }}>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span style={{ verticalAlign: 'middle' }}>Download CV</span>
+              </>
+            )}
+          </button>
+        </div>
 
         <button 
           className={`burger ${open ? "open" : ""}`} 

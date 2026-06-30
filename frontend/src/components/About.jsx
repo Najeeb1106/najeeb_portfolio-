@@ -50,25 +50,17 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="skills-container"
+            className="skills-badge-container"
           >
-            {about.skills.map((skill, index) => (
-              <div key={index} className="skill-item">
-                <div className="skill-header">
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.level}%</span>
+            <h3 className="skills-badge-title">Core Proficiency Areas</h3>
+            <p className="skills-badge-subtitle">Practical engineering fields and methodologies I apply across projects.</p>
+            <div className="skills-badge-grid">
+              {about.skills.map((skill, index) => (
+                <div key={index} className="skill-badge-item">
+                  <span className="skill-badge-name">{skill.name}</span>
                 </div>
-                <div className="skill-bar">
-                  <motion.div
-                    className="skill-progress"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
