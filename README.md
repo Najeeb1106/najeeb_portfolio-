@@ -6,6 +6,8 @@
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License](https://img.shields.io/badge/License-MIT-4ade80?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
+**Live Demo:** [https://najeeb-ullah-786.vercel.app/](https://najeeb-ullah-786.vercel.app/)
+
 A modern, interactive portfolio website built with React, Three.js, and Framer Motion for Najeeb Ullah Tahir.
 
 ---
