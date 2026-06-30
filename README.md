@@ -131,4 +131,4 @@ If you found this useful, please give it a ⭐ on GitHub!
 
 ---
 
-**Made with ❤️ by Uzair**
+**Made with ❤️ by Najeeb**
