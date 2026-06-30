@@ -1,49 +1,42 @@
-# 🚀 Portfolio-React
+# 🚀 My-Portfolio (Najeeb Ullah Tahir)
 
 [![React](https://img.shields.io/badge/React-19.2.7-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-r152-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.0.2-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.41.0-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License](https://img.shields.io/badge/License-MIT-4ade80?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
-**Live Demo:** [https://portfolio-react-rosy-eight.vercel.app](https://portfolio-react-rosy-eight.vercel.app)
-
-A modern, interactive 3D portfolio template built with React, Three.js, and Framer Motion. Fully customizable with zero coding required.
+A modern, interactive portfolio website built with React, Three.js, and Framer Motion for Najeeb Ullah Tahir.
 
 ---
 
 ## ✨ Features
 
-- 🎨 Interactive 3D avatar with smooth animations
-- 📱 Fully responsive on all devices
+- 🎨 Interactive 3D design and glowing typography
+- 📱 Fully responsive grid and card layouts for mobile viewports
 - 🎯 Glass-morphism UI with dark theme
 - 📧 Functional contact form with EmailJS integration
-- 🖼️ Dynamic project showcase with filtering
-- 📊 Visual skill representation
+- 🖼️ Dynamic project showcase featuring 11 interactive projects
+- 📊 Visual skill levels and certifications
 - 🚀 Smooth scroll and page transitions
-- 🎭 Customizable without touching code
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Portfolio-React/
+my-portfolio/
+├── .gitignore
+├── README.md
 └── frontend/
     ├── public/
     │   ├── index.html
-    │   └── favicon.ico
+    │   └── mylogo.png           ← Customized letter 'N' favicon
     ├── src/
     │   ├── assets/
-    │   │   ├── CV/              ← Your CV goes here
-    │   │   │   └── uzair_cv.pdf
-    │   │   └── images/          ← Project images go here
-    │   │       ├── Api.png
-    │   │       ├── Auth.png
-    │   │       ├── block.jpg
-    │   │       ├── ecom.jpg
-    │   │       └── portfolio.png
-    │   ├── components/          ← Don't touch these
+    │   │   ├── CV/              ← Najeeb's CV
+    │   │   └── images/          ← Project preview images
+    │   ├── components/          ← Layout & Page Components
     │   │   ├── Navbar.jsx
     │   │   ├── Hero.jsx
     │   │   ├── About.jsx
@@ -52,12 +45,11 @@ Portfolio-React/
     │   │   ├── Contact.jsx
     │   │   └── Footer.jsx
     │   ├── data/
-    │   │   └── PortfolioContent.js  ← 🔥 ONLY EDIT THIS
-    │   ├── styles/              ← CSS files (optional)
+    │   │   └── PortfolioContent.js  ← Portfolio content data
+    │   ├── styles/              ← Component CSS Stylesheets
     │   ├── App.js
     │   └── index.js
-    ├── .env                     ← EmailJS keys (optional)
-    ├── .gitignore
+    ├── .env                     ← EmailJS credentials
     ├── package.json
     └── README.md
 ```
@@ -67,64 +59,44 @@ Portfolio-React/
 ## 🚀 Quick Setup
 
 ```bash
-git clone https://github.com/npm-335i/Portfolio-React.git
-cd Portfolio-React/frontend
+git clone https://github.com/Najeeb1106/my-portfolio.git
+cd my-portfolio/frontend
 npm install
 npm start
 ```
 
-## ✏️ Customize in 3 Steps
+---
 
-### Step 1: Edit Content
-**Only file to edit:** `/frontend/src/data/PortfolioContent.js`
+## ✏️ Development & Customization
 
-Change everything:
-- **Hero:** name, title, bio, stats, tech stack
-- **About:** description, skills, stats
-- **Projects:** add/remove projects, images, links
-- **Contact:** email, social links, availability
-- **Skills:** add/remove skills with levels
+### Step 1: Content Configuration
+Customize details (Hero bio, certifications, stats, and project showcases) inside:
+`/frontend/src/data/PortfolioContent.js`
 
-### Step 2: Add Your CV
+### Step 2: Running Locally
+Verify edits and start the development server using:
 ```bash
-# Place your CV in:
-/frontend/src/assets/CV/your_cv.pdf
-
-# Update import in /frontend/src/components/Hero.jsx:
-import cvPDF from "../assets/CV/your_cv.pdf";
+npm start
 ```
 
-### Step 3: Add Project Images
+### Step 3: Production Build
+Compile and bundle the production files using:
 ```bash
-# Place images in:
-/frontend/src/assets/images/your-image.png
-
-# Import in PortfolioContent.js:
-import Project1 from "../assets/images/your-image.png";
+npm run build
 ```
 
 ---
 
-## 📧 Contact Form Setup (Optional)
+## 📧 Contact Form Setup
 
-1. Sign up at [EmailJS](https://www.emailjs.com/)
-2. Create a service and template
-3. Create `.env` file in `/frontend/`:
+1. Create a service and email template on [EmailJS](https://www.emailjs.com/).
+2. Place your keys in `/frontend/.env`:
 
 ```env
 REACT_APP_EMAILJS_SERVICE_ID=your_service_id
 REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
 REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
 ```
-
----
-
-## 🚀 Deploy to Vercel
-
-1. Push to GitHub
-2. Import repository to [Vercel](https://vercel.com)
-3. Add environment variables (if using EmailJS)
-4. Deploy!
 
 ---
 
@@ -140,16 +112,16 @@ REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
 
 ## 📝 License
 
-MIT License - Feel free to use for personal or commercial projects.
+MIT License
 
 ---
 
-## 👨‍💻 Created by
+## 👨‍💻 Owner
 
-**Uzair** - Full Stack Developer
+**Najeeb Ullah Tahir** - Full Stack & Mobile Engineer
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/npm-335i)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/uzairdev1/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Najeeb1106)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/najeeb-ullah-tahir)
 
 ---
 
