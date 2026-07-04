@@ -628,6 +628,7 @@ export const PortfolioContent = {
       { label: "Projects", href: "#projects" },
       { label: "Certifications", href: "#certifications" },
       { label: "Contact", href: "#contact" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
     ],
     copyright: "© 2026 Najeeb Ullah Tahir. All rights reserved.",
     heart: "Crafted with ❤️ by Najeeb",

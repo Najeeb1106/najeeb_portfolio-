@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,12 +11,14 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 import "./App.css";
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const appRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -39,6 +42,11 @@ function App() {
       window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="app" ref={appRef}>
@@ -89,14 +97,21 @@ function App() {
       <div className="orb-global orb-global-3" />
 
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Contact />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <About />
+            <Services />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Contact />
+          </>
+        } />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      </Routes>
       <Footer />
       <ScrollToTop />
     </div>

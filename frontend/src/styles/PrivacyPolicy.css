@@ -1,0 +1,217 @@
+.privacy-page-wrapper {
+  padding: 140px 24px 80px 24px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.privacy-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.privacy-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.policy-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(18, 185, 144, 0.08);
+  border: 1px solid rgba(18, 185, 144, 0.1);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.policy-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.policy-main-title .policy-highlight {
+  background: linear-gradient(135deg, var(--accent), #0ea883);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.policy-effective-date {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.policy-header-divider {
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 0 auto;
+}
+
+.privacy-card {
+  background: rgba(15, 15, 27, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.privacy-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+.privacy-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.privacy-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.2px;
+}
+
+.privacy-section-content {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.privacy-section-content p {
+  margin-bottom: 16px;
+}
+
+.privacy-section-content p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.policy-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.policy-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 14px;
+}
+
+.policy-list li:last-child {
+  margin-bottom: 0;
+}
+
+.policy-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1;
+  top: 0px;
+}
+
+.contact-card-policy {
+  background: rgba(18, 185, 144, 0.04);
+  border: 1px solid rgba(18, 185, 144, 0.1);
+  padding: 18px 24px;
+  border-radius: 12px;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+.contact-card-policy:hover {
+  background: rgba(18, 185, 144, 0.08);
+  border-color: rgba(18, 185, 144, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(18, 185, 144, 0.05);
+}
+
+.contact-label-policy {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-email-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-email-link:hover {
+  color: #0ea883;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .privacy-page-wrapper {
+    padding: 110px 16px 60px 16px;
+  }
+
+  .policy-main-title {
+    font-size: 36px;
+  }
+
+  .privacy-card {
+    padding: 30px;
+  }
+
+  .privacy-section-title {
+    font-size: 19px;
+  }
+
+  .privacy-section-content {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .policy-main-title {
+    font-size: 28px;
+  }
+
+  .privacy-card {
+    padding: 20px 16px;
+  }
+
+  .contact-card-policy {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 6px;
+  }
+}

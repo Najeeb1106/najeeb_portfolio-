@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import PortfolioContent from "../data/PortfolioContent";
 import "../styles/navbar.css";
 
@@ -8,6 +9,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -18,10 +21,27 @@ export default function Navbar() {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id.replace('#', ''));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const sectionId = id.replace('#', '');
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        } else if (sectionId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 200);
       setOpen(false);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setOpen(false);
+      } else if (sectionId === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setOpen(false);
+      }
     }
   };
 
