@@ -87,19 +87,23 @@ Software engineer with **2+ years of experience** across full-stack web, AI/ML, 
 *Flutter • Dart • Riverpod • SQLite • flutter_secure_storage • local_auth • GoRouter • PDF Statements*
 - Production-ready, 100% offline digital ledger application for managing personal loans, repayments, transactions, reminders, contacts, and financial records. Features PIN/biometric authentication, encrypted SQLite storage, PDF statements, and due alerts. [View on Google Play](https://play.google.com/store/apps/details?id=dev.codrix.khata_app&pcampaignid=web_share) • [GitHub](https://github.com/Najeeb1106/khataflow_mob_app)
 
-### 4. 🔬 **[TruthLens AI — Multilingual Fake News Detector (FYP)](https://github.com/Najeeb1106)**
+### 4. 📄 **[Pocket Scan — Mobile Document Scanner (Live on Google Play)](https://play.google.com/store/apps/details?id=dev.codrix.pocketscan&pcampaignid=web_share)**
+*Flutter • Dart • Edge Detection • Image Processing • PDF Export • Offline-First*
+- Modern mobile document scanner built to capture, scan, crop, enhance, and manage documents directly from a smartphone. Features automatic edge detection, perspective correction, enhancement filters, and instant PDF/JPEG export. [View on Google Play](https://play.google.com/store/apps/details?id=dev.codrix.pocketscan&pcampaignid=web_share) • [GitHub](https://github.com/Najeeb1106/Pocket_Scan_Mob_App)
+
+### 5. 🔬 **[TruthLens AI — Multilingual Fake News Detector (FYP)](https://github.com/Najeeb1106)**
 *XLM-RoBERTa • SHAP • FastAPI • React • TypeScript*
 - Multilingual fake news classification using XLM-RoBERTa with SHAP explainability; full-stack deployment with FastAPI backend and React/TypeScript frontend.
 
-### 5. 🩻 **[PneumoScan AI — Chest X-Ray Pneumonia Classifier](https://github.com/Najeeb1106)**
+### 6. 🩻 **[PneumoScan AI — Chest X-Ray Pneumonia Classifier](https://github.com/Najeeb1106)**
 *CNN • TensorFlow/Keras • FastAPI • Docker*
 - Custom CNN achieving **87.34% accuracy** and **98% pneumonia recall** on chest X-ray datasets; deployed as a live inference API.
 
-### 6. 📊 **[Gaplytics — AI Skill-Gap Platform](https://github.com/Najeeb1106)**
+### 7. 📊 **[Gaplytics — AI Skill-Gap Platform](https://github.com/Najeeb1106)**
 *TF-IDF • K-Means • FastAPI • React • Vite*
 - Clusters user skill profiles against job market requirements using TF-IDF + K-Means to surface targeted learning priorities.
 
-### 7. 💰 **[BudgetWise — Personal Finance App](https://github.com/Najeeb1106)**
+### 8. 💰 **[BudgetWise — Personal Finance App](https://github.com/Najeeb1106)**
 *Flutter • Dart • SQLite • Offline-First*
 - Cross-platform expense and budget tracking app with full offline data persistence and responsive UI across Android and iOS.
 

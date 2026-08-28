@@ -1,5 +1,6 @@
 import SchedUOSImg from "../assets/images/scheduos.png";
 import KhataFlowImg from "../assets/images/khataflow.png";
+import PocketScanImg from "../assets/images/pocket_scan.png";
 import BudgetWiseImg from "../assets/images/budgetwise.png";
 import NexusImg from "../assets/images/nexus.png";
 import TruthLensImg from "../assets/images/truthlens.png";
@@ -297,6 +298,30 @@ export const PortfolioContent = {
       },
       {
         id: 3,
+        title: "Pocket Scan",
+        description:
+          "A modern mobile document scanning application built to capture, scan, crop, enhance, and manage documents directly from a smartphone.",
+        imageUrl: PocketScanImg,
+        emoji: "📄",
+        category: "frontend",
+        tags: ["Flutter", "Dart", "Edge Detection", "Image Processing", "PDF Export", "Offline-First"],
+        liveUrl: "https://play.google.com/store/apps/details?id=dev.codrix.pocketscan&pcampaignid=web_share",
+        githubUrl: "https://github.com/Najeeb1106/Pocket_Scan_Mob_App",
+        statusBadge: "Live on Google Play",
+        liveType: "playstore",
+        liveLabel: "View on Google Play",
+        features: [
+          "Smart document scanning with automatic edge detection",
+          "Perspective correction and quad-point crop handles",
+          "Advanced enhancement filters (B&W, Magic Color, Grayscale)",
+          "Multi-page batch scanning and organization",
+          "High-resolution PDF generation and direct sharing",
+          "100% on-device processing for privacy and offline speed",
+          "Built using Flutter & Dart for cross-platform fluid UI",
+        ],
+      },
+      {
+        id: 4,
         title: "BudgetWise",
         description:
           "A premium, feature-rich personal finance and budgeting application built with Flutter. Provides real-time financial tracking, interactive charts (fl_chart), local SQLite database encryption with SQLCipher, smart savings goals, and biometric app lock.",
@@ -308,7 +333,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/budgetwise_mob_app",
       },
       {
-        id: 4,
+        id: 5,
         title: "InternPro.pk",
         description:
           "Pakistan's #1 Virtual Internship Platform. A full-stack solution bridging the gap between education and employment with AI-powered assistants, mock interviews, progress trackers, and a streamlined job portal.",
@@ -320,7 +345,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Intern_Pro",
       },
       {
-        id: 5,
+        id: 6,
         title: "TruthLens AI",
         description:
           "Final-year project for multilingual fake news detection with explainability using XLM-RoBERTa and SHAP.",
@@ -332,7 +357,7 @@ export const PortfolioContent = {
         githubUrl: "",
       },
       {
-        id: 6,
+        id: 7,
         title: "PneumoScan AI",
         description:
           "CNN-based chest X-ray pneumonia classifier that achieved 87.34% accuracy and 98% pneumonia recall.",
@@ -344,7 +369,7 @@ export const PortfolioContent = {
         githubUrl: "",
       },
       {
-        id: 7,
+        id: 8,
         title: "InternView AI",
         description:
           "Regression-based ML system for predicting intern performance and organizational fit using ensemble behavioral analysis (XGBoost + Random Forest) served via FastAPI.",
@@ -356,7 +381,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/lntern-Performance-Predictor",
       },
       {
-        id: 8,
+        id: 9,
         title: "Sentintern AI",
         description:
           "A high-performance sentiment analysis platform that transforms raw qualitative feedback into quantitative business intelligence using a fine-tuned DistilBERT transformer model.",
@@ -368,7 +393,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Internship_Feedback_Sentiment_Analysis",
       },
       {
-        id: 9,
+        id: 10,
         title: "NexusAI",
         description:
           "Next-gen AI assistant powered by LLaMA 3.1. Features real-time conversational chat, response streaming, clear messaging cues, and a sleek dark-mode widget interface.",
@@ -380,7 +405,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/ai_chatbot",
       },
       {
-        id: 10,
+        id: 11,
         title: "Haseeb Portfolio",
         description:
           "A premium developer portfolio website built for a Full Stack Dev (Laravel & Flutter expert) with a clean dark mode design system, smooth animations, and interactive section transitions.",
@@ -392,7 +417,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Haseeb_portfolio-",
       },
       {
-        id: 11,
+        id: 12,
         title: "Textile Essence",
         description:
           "A professional B2B export website for an ISO-certified textile manufacturer and exporter. Features a comprehensive products showcase (fabrics, medical apparel, uniforms, bedding) and a quote inquiry form.",
