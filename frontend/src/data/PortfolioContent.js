@@ -272,11 +272,11 @@ export const PortfolioContent = {
         id: 2,
         title: "KhataFlow",
         description:
-          "A secure, offline-first personal ledger and expense bookkeeping manager built with Flutter. Features biometric/PIN lock, encrypted Isar database storage, professional PDF statement generation, local notifications, and soft-delete recovery.",
+          "A secure, 100% offline digital ledger and bookkeeping manager built with Flutter. Track money lent, borrowed, received, repaid, income & expenses with biometric/PIN lock, encrypted Isar storage, PDF statements, and due alerts.",
         imageUrl: KhataFlowImg,
         emoji: "💳",
         category: "frontend",
-        tags: ["Flutter", "Dart", "Riverpod", "Isar Database", "GoRouter"],
+        tags: ["Flutter", "Dart", "Riverpod", "Isar Database", "Offline-First"],
         liveUrl: "",
         githubUrl: "https://github.com/Najeeb1106/khataflow_mob_app",
       },
