@@ -1,6 +1,7 @@
 import SchedUOSImg from "../assets/images/scheduos.png";
 import KhataFlowImg from "../assets/images/khataflow.png";
 import PocketScanImg from "../assets/images/pocket_scan.png";
+import SmartInvoiceBuilderImg from "../assets/images/smart_invoice_builder.png";
 import BudgetWiseImg from "../assets/images/budgetwise.png";
 import NexusImg from "../assets/images/nexus.png";
 import TruthLensImg from "../assets/images/truthlens.png";
@@ -322,6 +323,30 @@ export const PortfolioContent = {
       },
       {
         id: 4,
+        title: "Smart Invoice Builder",
+        description:
+          "A modern, privacy-first web application for freelancers, agencies, and businesses to create, customize, and export professional A4 invoices instantly with real-time financial calculations.",
+        imageUrl: SmartInvoiceBuilderImg,
+        emoji: "🧾",
+        category: "frontend",
+        tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "PDF Export", "Privacy-First"],
+        liveUrl: "https://smart-invoice-builder-free.vercel.app/",
+        githubUrl: "https://github.com/Najeeb1106/Smart-Invoice-Builder",
+        statusBadge: "Live on Vercel",
+        liveType: "web",
+        liveLabel: "Live Demo",
+        features: [
+          "12 distinct professional invoice templates (Corporate, Creative, IT, Retail)",
+          "Real-time calculation engine for item totals, discounts, taxes, and grand totals",
+          "High-resolution single and multi-page A4 PDF export powered by html2pdf",
+          "100% privacy-first local browser storage with zero server database tracking",
+          "Fail-proof isolated iframe print engine for crisp 1-page A4 printouts",
+          "Client-side WebP logo compression algorithm and live responsive preview",
+          "Built with React 18, TypeScript, and Vite for optimal performance",
+        ],
+      },
+      {
+        id: 5,
         title: "BudgetWise",
         description:
           "A premium, feature-rich personal finance and budgeting application built with Flutter. Provides real-time financial tracking, interactive charts (fl_chart), local SQLite database encryption with SQLCipher, smart savings goals, and biometric app lock.",
@@ -333,7 +358,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/budgetwise_mob_app",
       },
       {
-        id: 5,
+        id: 6,
         title: "InternPro.pk",
         description:
           "Pakistan's #1 Virtual Internship Platform. A full-stack solution bridging the gap between education and employment with AI-powered assistants, mock interviews, progress trackers, and a streamlined job portal.",
@@ -345,7 +370,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Intern_Pro",
       },
       {
-        id: 6,
+        id: 7,
         title: "TruthLens AI",
         description:
           "Final-year project for multilingual fake news detection with explainability using XLM-RoBERTa and SHAP.",
@@ -357,7 +382,7 @@ export const PortfolioContent = {
         githubUrl: "",
       },
       {
-        id: 7,
+        id: 8,
         title: "PneumoScan AI",
         description:
           "CNN-based chest X-ray pneumonia classifier that achieved 87.34% accuracy and 98% pneumonia recall.",
@@ -369,7 +394,7 @@ export const PortfolioContent = {
         githubUrl: "",
       },
       {
-        id: 8,
+        id: 9,
         title: "InternView AI",
         description:
           "Regression-based ML system for predicting intern performance and organizational fit using ensemble behavioral analysis (XGBoost + Random Forest) served via FastAPI.",
@@ -381,7 +406,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/lntern-Performance-Predictor",
       },
       {
-        id: 9,
+        id: 10,
         title: "Sentintern AI",
         description:
           "A high-performance sentiment analysis platform that transforms raw qualitative feedback into quantitative business intelligence using a fine-tuned DistilBERT transformer model.",
@@ -393,7 +418,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Internship_Feedback_Sentiment_Analysis",
       },
       {
-        id: 10,
+        id: 11,
         title: "NexusAI",
         description:
           "Next-gen AI assistant powered by LLaMA 3.1. Features real-time conversational chat, response streaming, clear messaging cues, and a sleek dark-mode widget interface.",
@@ -405,7 +430,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/ai_chatbot",
       },
       {
-        id: 11,
+        id: 12,
         title: "Haseeb Portfolio",
         description:
           "A premium developer portfolio website built for a Full Stack Dev (Laravel & Flutter expert) with a clean dark mode design system, smooth animations, and interactive section transitions.",
@@ -417,7 +442,7 @@ export const PortfolioContent = {
         githubUrl: "https://github.com/Najeeb1106/Haseeb_portfolio-",
       },
       {
-        id: 12,
+        id: 13,
         title: "Textile Essence",
         description:
           "A professional B2B export website for an ISO-certified textile manufacturer and exporter. Features a comprehensive products showcase (fabrics, medical apparel, uniforms, bedding) and a quote inquiry form.",
