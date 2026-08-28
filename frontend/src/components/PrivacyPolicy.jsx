@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
             All financial records, transaction logs, customer profiles, cash flows, and configuration data are stored locally and encrypted on your device's internal memory.
           </p>
           <p>
-            Your data is stored securely using the Isar Database engine. This data is entirely private to your device. We have no access to this database, and it is automatically deleted if you uninstall the application from your device.
+            Your data is stored securely using the SQLite database engine. This data is entirely private to your device. We have no access to this database, and it is automatically deleted if you uninstall the application from your device.
           </p>
         </>
       ),

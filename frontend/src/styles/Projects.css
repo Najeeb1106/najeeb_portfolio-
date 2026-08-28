@@ -482,3 +482,113 @@
     font-size: 18px;
   }
 }
+
+/* Live Badge & Google Play Styles */
+.project-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(10, 15, 29, 0.88);
+  border: 1px solid rgba(18, 185, 144, 0.4);
+  color: #12b990;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.3px;
+}
+
+.project-card-badge.modal-badge {
+  top: 16px;
+  right: 64px;
+}
+
+.live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #12b990;
+  box-shadow: 0 0 8px #12b990;
+  display: inline-block;
+  animation: liveDotPulse 2s infinite;
+}
+
+@keyframes liveDotPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(18, 185, 144, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(18, 185, 144, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(18, 185, 144, 0);
+  }
+}
+
+.project-action-btn.live.playstore {
+  background: linear-gradient(135deg, #0ea883, #0284c7);
+  gap: 5px;
+}
+
+.modal-btn.primary.playstore {
+  background: linear-gradient(135deg, #10b981, #0284c7);
+  gap: 8px;
+}
+
+.modal-features-container {
+  margin: 16px 0 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.modal-features-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+}
+
+.modal-features-list li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.feature-check {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .modal-features-list {
+    grid-template-columns: 1fr;
+  }
+}
+

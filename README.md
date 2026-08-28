@@ -83,9 +83,9 @@ Software engineer with **2+ years of experience** across full-stack web, AI/ML, 
 *React 18 • TypeScript • Node.js • Express • MongoDB Atlas • WebRTC • Socket.io • Stripe*
 - Enterprise B2B platform with real-time communication (WebRTC + Socket.io), payment integration (Stripe), and JWT auth delivered under tight sprint deadlines.
 
-### 3. 💳 **[KhataFlow — Offline-First Digital Ledger & Bookkeeping App](https://github.com/Najeeb1106/khataflow_mob_app)**
-*Flutter • Dart • Riverpod • Isar DB • Biometrics/PIN • PDF Statements*
-- 100% offline digital ledger for tracking lent/borrowed money, income & expenses, featuring encrypted local Isar storage, PDF reports, due date reminders, and biometric security.
+### 3. 💳 **[KhataFlow — Offline-First Digital Ledger (Live on Google Play)](https://play.google.com/store/apps/details?id=dev.codrix.khata_app&pcampaignid=web_share)**
+*Flutter • Dart • Riverpod • SQLite • flutter_secure_storage • local_auth • GoRouter • PDF Statements*
+- Production-ready, 100% offline digital ledger application for managing personal loans, repayments, transactions, reminders, contacts, and financial records. Features PIN/biometric authentication, encrypted SQLite storage, PDF statements, and due alerts. [View on Google Play](https://play.google.com/store/apps/details?id=dev.codrix.khata_app&pcampaignid=web_share) • [GitHub](https://github.com/Najeeb1106/khataflow_mob_app)
 
 ### 4. 🔬 **[TruthLens AI — Multilingual Fake News Detector (FYP)](https://github.com/Najeeb1106)**
 *XLM-RoBERTa • SHAP • FastAPI • React • TypeScript*
